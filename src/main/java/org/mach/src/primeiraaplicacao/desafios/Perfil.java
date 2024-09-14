@@ -1,4 +1,4 @@
-package org.mach.src.primeiraaplicacao;
+package org.mach.src.primeiraaplicacao.desafios;
 
 import java.util.Scanner;
 
