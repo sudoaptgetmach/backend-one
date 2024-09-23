@@ -28,8 +28,5 @@ public class Main {
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Sinopse: \n" + sinopse);
 
-
-
-
     }
 }
