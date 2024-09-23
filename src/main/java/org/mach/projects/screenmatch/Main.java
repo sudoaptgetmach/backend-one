@@ -6,6 +6,14 @@ public class Main {
 
         int anoDeLancamento;
         anoDeLancamento = 2022;
+
+        double media1 = Math.random() * 11;
+        double media2 = Math.random() * 11;
+        double media3 = Math.random() * 11;
+
+        double media = (media1 + media2 + media3) / 3;
+        double rating = media / 2;
+
         boolean incluidoNoPlano = true;
         double notaDoFilme = 8.1;
         String sinopse;
@@ -16,10 +24,12 @@ public class Main {
 
         System.out.println("Esse é o screenmatch");
         System.out.println("Filme: Top Gun Maverick");
+        System.out.println("Classificação: " + rating);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Sinopse: \n" + sinopse);
 
 
-    }
 
+
+    }
 }
