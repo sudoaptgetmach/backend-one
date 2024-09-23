@@ -5,7 +5,6 @@ public class ConversorDolar {
     private static final int QUANTIDADE_MAX = 100000;
     private static final double VALOR_DOLAR = 4.94;
 
-
     public static void main(String[] args) {
 
         double valorEmDolares = Math.random() * QUANTIDADE_MAX;
