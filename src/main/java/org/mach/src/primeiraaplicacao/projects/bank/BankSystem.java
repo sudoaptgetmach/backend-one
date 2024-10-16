@@ -94,9 +94,4 @@ public class BankSystem {
             System.out.println("Conta não encontrada.");
         }
     }
-
-    public static void main(String[] args) {
-        BankSystem bankSystem = new BankSystem();
-        bankSystem.init();
-    }
 }
