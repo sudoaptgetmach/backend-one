@@ -1,8 +1,7 @@
-package org.mach;
+package org.mach.src.oop.exercicios;
 
-import org.mach.src.oop.exercicios.*;
+public class Executor {
 
-public class Main {
     public static void main(String[] args) {
 
         Pessoa pessoa = new Pessoa();
