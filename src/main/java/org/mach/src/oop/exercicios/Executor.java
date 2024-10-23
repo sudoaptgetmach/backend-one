@@ -1,49 +1,33 @@
 package org.mach.src.oop.exercicios;
 
+import org.mach.src.oop.exercicios.reaproveitandocaracteristicas.ModeloCarro;
+
 public class Executor {
 
     public static void main(String[] args) {
 
-        Pessoa pessoa = new Pessoa();
-        Dobro dobro = new Dobro(5);
+        ModeloCarro carro = new ModeloCarro();
 
-        Musica musica = new Musica("Música", "Teste", 1993);
-        musica.avaliar(4);
-        musica.avaliar(1);
-        musica.avaliar(0);
-        musica.avaliar(5);
-        musica.avaliar(9);
+        carro.setNome("Fiat Uno");
+        carro.setFichatecnica("Vem com escada!");
+        carro.setCor("Preto");
+        carro.setTipo("Superesportivo");
+        carro.setAno(1997);
+        carro.addPrecos(30000);
+        carro.addPrecos(25000);
+        carro.addPrecos(10000);
 
-        Carro carro = new Carro("Fiat Uno", 2006, "Prata");
-        carro.setFichatecnica("Lorem ipsum.");
+        System.out.println("Nome: " + carro.getNome());
+        System.out.println("Ano: " + carro.getAno());;
+        System.out.println("Cor: " + carro.getCor());
+        System.out.println("Teto solar: " + carro.isTetoSolar());
+        System.out.println("Tipo: " + carro.getTipo());
+        System.out.println();
+        System.out.println("Preços por ano:");
+        carro.getPrecos();
+        System.out.printf("Preço médio: R$ %.2f\n", carro.getPrecoMedio());
+        System.out.println("Maior preço: R$ " + carro.getMaiorPreco());
+        System.out.println("Menor preço: R$ " + carro.getMenorPreco());
 
-        Aluno aluno = new Aluno();
-        aluno.setNome("Aluno");
-        aluno.setIdade(400);
-
-        System.out.println("Primeiro exercício - retorna frase do objeto: ");
-        System.out.println(pessoa.getFrase() + "\n");
-
-        System.out.println("Segundo exercício - dobro:");
-        System.out.println(dobro.getNumero() + "\n");
-
-        System.out.println("Terceiro exercício - classe Música:");
-        System.out.println("Nome da música: " + musica.getNome());
-        System.out.println("Artista: " + musica.getArtista());
-        System.out.println("Ano de lançamento: " + musica.getAnoDeLancamento() + "\n");
-        System.out.println("Número de avaliações: " + musica.getNumeroAvaliacoes());
-        System.out.println("Média de avaliações: " + musica.getMediaAvaliacoes() + "\n");
-
-        System.out.println("Quarto exercício - Carro:");
-        System.out.println("Marca e modelo: " + carro.getNome());
-        System.out.println("Ano: " + carro.getAno());
-        System.out.println("Cor: " + carro.getCor() + "\n");
-        System.out.println("Ficha técnica: " + carro.getFichatecnica());
-        System.out.println("Idade do carro: " + carro.getIdade() + " anos. \n");
-
-
-        System.out.println("Quinto exercício - Aluno:");
-        System.out.println("Nome: " + aluno.getNome());
-        System.out.println("Idade: " + aluno.getIdade());
     }
 }
