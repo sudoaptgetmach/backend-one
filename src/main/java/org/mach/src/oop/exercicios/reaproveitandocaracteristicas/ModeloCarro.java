@@ -1,6 +1,6 @@
 package org.mach.src.oop.exercicios.reaproveitandocaracteristicas;
 
-import org.mach.src.oop.exercicios.Carro;
+import org.mach.src.oop.exercicios.superclasses.Carro;
 
 public class ModeloCarro extends Carro {
 

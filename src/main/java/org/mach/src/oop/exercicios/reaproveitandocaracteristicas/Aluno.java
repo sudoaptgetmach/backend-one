@@ -1,4 +1,4 @@
-package org.mach.src.oop.exercicios;
+package org.mach.src.oop.exercicios.reaproveitandocaracteristicas;
 
 public class Aluno {
 
