@@ -1,4 +1,4 @@
-package org.mach.src.exercises.beecrowd.codingbat.warmup1;
+package org.mach.src.exercises.warmup1;
 
 public class diff21 {
 
