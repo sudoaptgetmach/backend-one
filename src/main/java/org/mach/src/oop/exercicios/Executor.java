@@ -1,18 +1,22 @@
 package org.mach.src.oop.exercicios;
 
-import org.mach.src.primeiraaplicacao.projects.bank.CheckingAccount;
+import org.mach.src.oop.exercicios.reaproveitandocaracteristicas.GeradorPrimo;
+import org.mach.src.oop.exercicios.reaproveitandocaracteristicas.VerificadorPrimo;
 
 public class Executor {
 
     public static void main(String[] args) {
 
-        CheckingAccount checkingAccount = new CheckingAccount(1);
-        checkingAccount.deposit(5000);
+        VerificadorPrimo verificador = new VerificadorPrimo();
+        GeradorPrimo gerador = new GeradorPrimo();
 
-        System.out.println("Número da sua conta corrente: " + checkingAccount.getAccountNumber());
-        System.out.println("Saldo: " + checkingAccount.getBalance());
+        verificador.setPrimo(1);
 
-        checkingAccount.mensalTax();
+        gerador.gerarProximoPrimo();
+        gerador.gerarProximoPrimo();
+        gerador.gerarProximoPrimo();
 
+        boolean ehPrimo = verificador.verificarSeEhPrimo();
+        System.out.println("O número é primo? " + ((ehPrimo) ? "Sim." : "Não."));
     }
 }
