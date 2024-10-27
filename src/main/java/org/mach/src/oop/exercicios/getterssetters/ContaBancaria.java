@@ -6,6 +6,12 @@ public class ContaBancaria {
     private double saldo;
     public String titular;
 
+    public ContaBancaria(int numeroConta, String titular, double saldo) {
+        this.numeroConta = numeroConta;
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+
     public int getNumeroConta() {
         return numeroConta;
     }
@@ -39,5 +45,9 @@ public class ContaBancaria {
 
         }
         return false;
+    }
+
+    public String toString() {
+        return "\nNúmero da conta: " + this.getNumeroConta() + "\nTitular: " + this.getTitular() + "\nSaldo: " + String.format("%.2f", this.getSaldo());
     }
 }

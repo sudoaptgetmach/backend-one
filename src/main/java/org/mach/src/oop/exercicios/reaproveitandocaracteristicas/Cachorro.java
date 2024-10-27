@@ -4,6 +4,11 @@ import org.mach.src.oop.exercicios.superclasses.Animal;
 
 public class Cachorro extends Animal {
 
+
+    public Cachorro(String nome, String tipo, int idade, int tamanho, int expectativaVida, String som) {
+        super(nome, tipo, idade, tamanho, expectativaVida, som);
+    }
+
     public void abanarRabo() {
         String acao = "O cachorro está abanando o rabo!";
         System.out.println(acao);

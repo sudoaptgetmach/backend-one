@@ -44,6 +44,8 @@ public class Produto {
     public double getPrecoFinal() {
         if (desconto > 0) {
             return preco - (preco * desconto / 100);
+        } else if (desconto == 0) {
+            return preco;
         }
         return precoFinal;
     }
