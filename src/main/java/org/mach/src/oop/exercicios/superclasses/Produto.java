@@ -1,4 +1,4 @@
-package org.mach.src.oop.exercicios.getterssetters;
+package org.mach.src.oop.exercicios.superclasses;
 
 public class Produto {
 
@@ -7,7 +7,12 @@ public class Produto {
     private double precoFinal;
     private int desconto;
 
-    void aplicarDesconto(int desconto) {
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public void aplicarDesconto(int desconto) {
 
         if (desconto > 100) {
             System.out.println("O desconto não pode ser maior que 100%");
@@ -45,5 +50,9 @@ public class Produto {
 
     public int getDesconto() {
         return desconto;
+    }
+
+    public String toString() {
+        return "\nNome: " + this.getNome() + "\nPreco original: " + String.format("%.2f",this.getPreco()) + "\nDesconto aplicado: " + this.getDesconto() + "\nPreço final: " + String.format("%.2f", this.getPrecoFinal());
     }
 }
