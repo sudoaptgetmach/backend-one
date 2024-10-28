@@ -7,6 +7,8 @@ import org.mach.src.oop.exercicios.superclasses.Animal;
 import org.mach.src.oop.exercicios.superclasses.Produto;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListManager {
@@ -14,6 +16,16 @@ public class ListManager {
     public static List<Produto> produtos = createProdutos();
     public static List<Animal> animais = createAnimais();
     public static List<ContaBancaria> contas = createContas();
+    public static List<Integer> listaNumerica = createLista();
+    List<String> listaPolimorfica;
+
+    private static List<Integer> createLista() {
+        List<Integer> listaNumerica = new ArrayList<>();
+        for (int i = 1; i <= (int) (Math.random() * 30) + 10; i++) {
+            listaNumerica.add(i);
+        }
+            return listaNumerica;
+    }
 
     private static List<Produto> createProdutos() {
         List<Produto> produtos = new ArrayList<>();
@@ -44,6 +56,7 @@ public class ListManager {
 
     public void listManager() {
 
+        /*
         contas.forEach(System.out::println);
 
         double maxSaldo = Double.NEGATIVE_INFINITY;
@@ -71,5 +84,30 @@ public class ListManager {
         System.out.println("Média dos preços dos produtos: " + String.format("%.2f", media));
 
         produtos.forEach(System.out::println);
+         */
+
+        System.out.println("Lista: ");
+        listaNumerica.forEach(System.out::println);
+
+        System.out.println("\nLista Ordenada: ");
+        Collections.sort(listaNumerica);
+        listaNumerica.forEach(System.out::println);
+
+        System.out.println("\nLista Ordenada reversa: ");
+        Collections.sort(listaNumerica.reversed());
+        listaNumerica.forEach(System.out::println);
+
+        listaPolimorfica = new ArrayList<>();
+        listaPolimorfica.add("Teste 1");
+        listaPolimorfica.add("Teste 2");
+        listaPolimorfica.add("Teste 3");
+        System.out.println("ArrayList: " + listaPolimorfica);
+
+        listaPolimorfica = new LinkedList<>();
+        listaPolimorfica.add("Elemento A");
+        listaPolimorfica.add("Elemento B");
+        listaPolimorfica.add("Elemento C");
+        System.out.println("LinkedList: " + listaPolimorfica);
+
     }
 }
