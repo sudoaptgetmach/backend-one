@@ -76,7 +76,7 @@ public class Livro {
     @Override
     public String toString() {
         return "\nTitulo: " + title +
-                "\nauthor: " + author.getName() +
+                "\nAutor: " + author.getName() +
                 "\nLinguagens disponíveis: " + languages +
                 "\nTotal de downloads: " + downloads;
     }
