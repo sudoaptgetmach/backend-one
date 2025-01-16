@@ -1,27 +1,28 @@
 package org.mach.projects.literalura;
 
-import org.mach.projects.literalura.repository.AuthorRepository;
-import org.mach.projects.literalura.repository.BookRepository;
 import org.mach.projects.literalura.main.Main;
+import org.mach.projects.literalura.service.AutorService;
+import org.mach.projects.literalura.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LiteraluraApplication {
+public class LiteraluraApplication implements CommandLineRunner {
 
     @Autowired
-    private BookRepository bookRepository;
+    private LivroService livroService;
     @Autowired
-    private AuthorRepository authorRepository;
+    private AutorService autorService;
 
     public static void main(String[] args) {
         SpringApplication.run(LiteraluraApplication.class, args);
     }
 
-    public void run(String... args) throws Exception {
-        Main main = new Main(bookRepository, authorRepository);
+    @Override
+    public void run(String... args) {
+        Main main = new Main(livroService, autorService);
         main.start();
     }
-
 }

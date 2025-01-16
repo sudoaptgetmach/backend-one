@@ -7,15 +7,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "books")
-public class Book {
+public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Author author;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Autor author;
 
     @ElementCollection
     @CollectionTable(name = "book_languages", joinColumns = @JoinColumn(name = "book_id"))
@@ -24,13 +24,13 @@ public class Book {
 
     private int downloads;
 
-    public Book() { }
+    public Livro() { }
 
-    public Book(LivrosData bookData) {
+    public Livro(LivroData bookData) {
         this.title = bookData.title();
         this.languages = bookData.languages();
         this.downloads = bookData.downloads();
-        this.author = new Author(bookData.author().get(0));
+        this.author = new Autor(bookData.author().getFirst());
     }
 
     public Long getId() {
@@ -49,11 +49,11 @@ public class Book {
         this.title = title;
     }
 
-    public Author getAuthor() {
+    public Autor getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(Autor author) {
         this.author = author;
     }
 
@@ -76,7 +76,7 @@ public class Book {
     @Override
     public String toString() {
         return "\nTitulo: " + title +
-                "\nAutor: " + author.getName() +
+                "\nauthor: " + author.getName() +
                 "\nLinguagens disponíveis: " + languages +
                 "\nTotal de downloads: " + downloads;
     }
